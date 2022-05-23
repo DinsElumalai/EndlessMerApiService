@@ -107,6 +107,9 @@ public class Vendor
 	@Column( name = "gstin")
 	private String gstin;
 	
+	private String prefixSpecial;
+	private String extraCopy;
+	
 	@Column( name = "registered_date")
 	private LocalDate registeredate;
 	
@@ -125,8 +128,8 @@ public class Vendor
 			String vendorNameAc, String vendorNameId, String vendorGivenCode, String vendorType, String vendorSubType,
 			String vendorOurTypeCode, boolean sales, boolean purchase, boolean jobWork, boolean transporter,
 			boolean manPower, String address1, String address2, String address3, String country, String state,
-			String city, String pincode, String comments, String gstin, LocalDate registeredate, boolean active,
-			LocalDate inActivatedDate) {
+			String city, String pincode, String comments, String gstin, String prefixSpecial, String extraCopy,
+			LocalDate registeredate, boolean active, LocalDate inActivatedDate) {
 		super();
 		this.vendorId = vendorId;
 		this.createdClient = createdClient;
@@ -157,6 +160,8 @@ public class Vendor
 		this.pincode = pincode;
 		this.comments = comments;
 		this.gstin = gstin;
+		this.prefixSpecial = prefixSpecial;
+		this.extraCopy = extraCopy;
 		this.registeredate = registeredate;
 		this.active = active;
 		this.inActivatedDate = inActivatedDate;
@@ -174,8 +179,9 @@ public class Vendor
 				+ purchase + ", jobWork=" + jobWork + ", transporter=" + transporter + ", manPower=" + manPower
 				+ ", address1=" + address1 + ", address2=" + address2 + ", address3=" + address3 + ", country="
 				+ country + ", state=" + state + ", city=" + city + ", pincode=" + pincode + ", comments=" + comments
-				+ ", gstin=" + gstin + ", registeredate=" + registeredate + ", active=" + active + ", inActivatedDate="
-				+ inActivatedDate + "]";
+				+ ", gstin=" + gstin + ", prefixSpecial=" + prefixSpecial + ", extraCopy=" + extraCopy
+				+ ", registeredate=" + registeredate + ", active=" + active + ", inActivatedDate=" + inActivatedDate
+				+ "]";
 	}
 
 
@@ -469,6 +475,26 @@ public class Vendor
 	}
 
 
+	public String getPrefixSpecial() {
+		return prefixSpecial;
+	}
+
+
+	public void setPrefixSpecial(String prefixSpecial) {
+		this.prefixSpecial = prefixSpecial;
+	}
+
+
+	public String getExtraCopy() {
+		return extraCopy;
+	}
+
+
+	public void setExtraCopy(String extraCopy) {
+		this.extraCopy = extraCopy;
+	}
+
+
 	public LocalDate getRegisteredate() {
 		return registeredate;
 	}
@@ -499,9 +525,6 @@ public class Vendor
 	}
 
 
-	
-	
-	
 	
 	
 }

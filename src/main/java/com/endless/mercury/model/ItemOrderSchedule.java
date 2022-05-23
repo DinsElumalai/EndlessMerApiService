@@ -39,38 +39,39 @@ public class ItemOrderSchedule implements Serializable {
 	private String itemOrderId;
 	private String itemId;
 	private String vendorScheduleReference;
+	private String scheduleVendor;
 	private String scheduleType;
 	private LocalDate scheduleDate;
-	private String schedule_nos;
-	private String schedule_kgs;
-	private LocalDate schedule_valid_date;
+	private String scheduleNos;
+	private String scheduleKgs;
+	private LocalDate scheduleValidDate;
 
 	public ItemOrderSchedule() {}
 
 	public ItemOrderSchedule(long itemOrderScheduleId, String createdClient, String createdBy,
-			LocalDateTime createdDate,String itemId, String updatedBy, LocalDateTime updatedDate, String orderScheduleOurCode,
-			String scheduleFor, String itemOrderId, String vendorScheduleReference, String scheduleType,
-			LocalDate scheduleDate, String schedule_nos, String schedule_kgs, LocalDate schedule_valid_date) {
+			LocalDateTime createdDate, String updatedBy, LocalDateTime updatedDate, String orderScheduleOurCode,
+			String scheduleFor, String itemOrderId, String itemId, String vendorScheduleReference,
+			String scheduleVendor, String scheduleType, LocalDate scheduleDate, String scheduleNos, String scheduleKgs,
+			LocalDate scheduleValidDate) {
 		super();
 		this.itemOrderScheduleId = itemOrderScheduleId;
 		this.createdClient = createdClient;
 		this.createdBy = createdBy;
-		this.itemId = itemId;
 		this.createdDate = createdDate;
 		this.updatedBy = updatedBy;
 		this.updatedDate = updatedDate;
 		this.orderScheduleOurCode = orderScheduleOurCode;
 		this.scheduleFor = scheduleFor;
 		this.itemOrderId = itemOrderId;
+		this.itemId = itemId;
 		this.vendorScheduleReference = vendorScheduleReference;
+		this.scheduleVendor = scheduleVendor;
 		this.scheduleType = scheduleType;
 		this.scheduleDate = scheduleDate;
-		this.schedule_nos = schedule_nos;
-		this.schedule_kgs = schedule_kgs;
-		this.schedule_valid_date = schedule_valid_date;
+		this.scheduleNos = scheduleNos;
+		this.scheduleKgs = scheduleKgs;
+		this.scheduleValidDate = scheduleValidDate;
 	}
-
-	
 
 	@Override
 	public String toString() {
@@ -78,18 +79,9 @@ public class ItemOrderSchedule implements Serializable {
 				+ ", createdBy=" + createdBy + ", createdDate=" + createdDate + ", updatedBy=" + updatedBy
 				+ ", updatedDate=" + updatedDate + ", orderScheduleOurCode=" + orderScheduleOurCode + ", scheduleFor="
 				+ scheduleFor + ", itemOrderId=" + itemOrderId + ", itemId=" + itemId + ", vendorScheduleReference="
-				+ vendorScheduleReference + ", scheduleType=" + scheduleType + ", scheduleDate=" + scheduleDate
-				+ ", schedule_nos=" + schedule_nos + ", schedule_kgs=" + schedule_kgs + ", schedule_valid_date="
-				+ schedule_valid_date + "]";
-	}
-
-	
-	public String getItemId() {
-		return itemId;
-	}
-
-	public void setItemId(String itemId) {
-		this.itemId = itemId;
+				+ vendorScheduleReference + ", scheduleVendor=" + scheduleVendor + ", scheduleType=" + scheduleType
+				+ ", scheduleDate=" + scheduleDate + ", scheduleNos=" + scheduleNos + ", scheduleKgs=" + scheduleKgs
+				+ ", scheduleValidDate=" + scheduleValidDate + "]";
 	}
 
 	public long getItemOrderScheduleId() {
@@ -164,12 +156,28 @@ public class ItemOrderSchedule implements Serializable {
 		this.itemOrderId = itemOrderId;
 	}
 
+	public String getItemId() {
+		return itemId;
+	}
+
+	public void setItemId(String itemId) {
+		this.itemId = itemId;
+	}
+
 	public String getVendorScheduleReference() {
 		return vendorScheduleReference;
 	}
 
 	public void setVendorScheduleReference(String vendorScheduleReference) {
 		this.vendorScheduleReference = vendorScheduleReference;
+	}
+
+	public String getScheduleVendor() {
+		return scheduleVendor;
+	}
+
+	public void setScheduleVendor(String scheduleVendor) {
+		this.scheduleVendor = scheduleVendor;
 	}
 
 	public String getScheduleType() {
@@ -188,29 +196,31 @@ public class ItemOrderSchedule implements Serializable {
 		this.scheduleDate = scheduleDate;
 	}
 
-	public String getSchedule_nos() {
-		return schedule_nos;
+	public String getScheduleNos() {
+		return scheduleNos;
 	}
 
-	public void setSchedule_nos(String schedule_nos) {
-		this.schedule_nos = schedule_nos;
+	public void setScheduleNos(String scheduleNos) {
+		this.scheduleNos = scheduleNos;
 	}
 
-	public String getSchedule_kgs() {
-		return schedule_kgs;
+	public String getScheduleKgs() {
+		return scheduleKgs;
 	}
 
-	public void setSchedule_kgs(String schedule_kgs) {
-		this.schedule_kgs = schedule_kgs;
+	public void setScheduleKgs(String scheduleKgs) {
+		this.scheduleKgs = scheduleKgs;
 	}
 
-	public LocalDate getSchedule_valid_date() {
-		return schedule_valid_date;
+	public LocalDate getScheduleValidDate() {
+		return scheduleValidDate;
 	}
 
-	public void setSchedule_valid_date(LocalDate schedule_valid_date) {
-		this.schedule_valid_date = schedule_valid_date;
+	public void setScheduleValidDate(LocalDate scheduleValidDate) {
+		this.scheduleValidDate = scheduleValidDate;
 	}
+
+	
 	
 	
 	

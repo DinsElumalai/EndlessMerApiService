@@ -98,6 +98,14 @@ public class EntranceRegister
 	@Column
 	private String comments;
 	@Column
+	private String dinner;
+	@Column
+	private String breakfastM;
+	@Column
+	private String breakfastN;
+	@Column
+	private String lunch;
+	@Column
 	private long gloves;
 	@Column
 	private long snacks;
@@ -110,20 +118,19 @@ public class EntranceRegister
 	{
 		
 	}
-	
+
 	public EntranceRegister(long entranceRegId, String createdClient, String createdBy, LocalDateTime createdDate,
 			String updatedBy, LocalDateTime updatedDate, String entranceRegisterOurCode, String registerType,
 			LocalDate registerDate, String vehicleNo, String driverName, String vendorId, String vendorName,
 			String personName, String employeeId, long contactNo1, long contactNo2, String address1, String address2,
 			String entryCategory, LocalDateTime entryTime, LocalDateTime roundedEntryTime, String entryCreatedBy,
 			LocalDateTime entryCreatedDate, String exitCategory, LocalDateTime exitTime, LocalDateTime roundedExitTime,
-			String exitCreatedBy, LocalDateTime exitCreatedDate, String purpose, String comments, long gloves,
-			long snacks, boolean isVerified, String verifiedBy, String rdurationHrs, String rdurationMins) {
+			String rdurationHrs, String rdurationMins, String exitCreatedBy, LocalDateTime exitCreatedDate,
+			String purpose, String comments, String dinner, String breakfastM, String breakfastN, String lunch,
+			long gloves, long snacks, boolean isVerified, String verifiedBy) {
 		super();
 		this.entranceRegId = entranceRegId;
 		this.createdClient = createdClient;
-		this.rdurationHrs = rdurationHrs;
-		this.rdurationMins = rdurationMins;
 		this.createdBy = createdBy;
 		this.createdDate = createdDate;
 		this.updatedBy = updatedBy;
@@ -149,32 +156,20 @@ public class EntranceRegister
 		this.exitCategory = exitCategory;
 		this.exitTime = exitTime;
 		this.roundedExitTime = roundedExitTime;
+		this.rdurationHrs = rdurationHrs;
+		this.rdurationMins = rdurationMins;
 		this.exitCreatedBy = exitCreatedBy;
 		this.exitCreatedDate = exitCreatedDate;
 		this.purpose = purpose;
 		this.comments = comments;
+		this.dinner = dinner;
+		this.breakfastM = breakfastM;
+		this.breakfastN = breakfastN;
+		this.lunch = lunch;
 		this.gloves = gloves;
 		this.snacks = snacks;
 		this.isVerified = isVerified;
 		this.verifiedBy = verifiedBy;
-	}
-
-	
-
-	public String getRdurationHrs() {
-		return rdurationHrs;
-	}
-
-	public void setRdurationHrs(String rdurationHrs) {
-		this.rdurationHrs = rdurationHrs;
-	}
-
-	public String getRdurationMins() {
-		return rdurationMins;
-	}
-
-	public void setRdurationMins(String rdurationMins) {
-		this.rdurationMins = rdurationMins;
 	}
 
 	@Override
@@ -190,8 +185,9 @@ public class EntranceRegister
 				+ entryCreatedBy + ", entryCreatedDate=" + entryCreatedDate + ", exitCategory=" + exitCategory
 				+ ", exitTime=" + exitTime + ", roundedExitTime=" + roundedExitTime + ", rdurationHrs=" + rdurationHrs
 				+ ", rdurationMins=" + rdurationMins + ", exitCreatedBy=" + exitCreatedBy + ", exitCreatedDate="
-				+ exitCreatedDate + ", purpose=" + purpose + ", comments=" + comments + ", gloves=" + gloves
-				+ ", snacks=" + snacks + ", isVerified=" + isVerified + ", verifiedBy=" + verifiedBy + "]";
+				+ exitCreatedDate + ", purpose=" + purpose + ", comments=" + comments + ", dinner=" + dinner
+				+ ", breakfastM=" + breakfastM + ", breakfastN=" + breakfastN + ", lunch=" + lunch + ", gloves="
+				+ gloves + ", snacks=" + snacks + ", isVerified=" + isVerified + ", verifiedBy=" + verifiedBy + "]";
 	}
 
 	public long getEntranceRegId() {
@@ -410,6 +406,22 @@ public class EntranceRegister
 		this.roundedExitTime = roundedExitTime;
 	}
 
+	public String getRdurationHrs() {
+		return rdurationHrs;
+	}
+
+	public void setRdurationHrs(String rdurationHrs) {
+		this.rdurationHrs = rdurationHrs;
+	}
+
+	public String getRdurationMins() {
+		return rdurationMins;
+	}
+
+	public void setRdurationMins(String rdurationMins) {
+		this.rdurationMins = rdurationMins;
+	}
+
 	public String getExitCreatedBy() {
 		return exitCreatedBy;
 	}
@@ -440,6 +452,38 @@ public class EntranceRegister
 
 	public void setComments(String comments) {
 		this.comments = comments;
+	}
+
+	public String getDinner() {
+		return dinner;
+	}
+
+	public void setDinner(String dinner) {
+		this.dinner = dinner;
+	}
+
+	public String getBreakfastM() {
+		return breakfastM;
+	}
+
+	public void setBreakfastM(String breakfastM) {
+		this.breakfastM = breakfastM;
+	}
+
+	public String getBreakfastN() {
+		return breakfastN;
+	}
+
+	public void setBreakfastN(String breakfastN) {
+		this.breakfastN = breakfastN;
+	}
+
+	public String getLunch() {
+		return lunch;
+	}
+
+	public void setLunch(String lunch) {
+		this.lunch = lunch;
 	}
 
 	public long getGloves() {
@@ -474,6 +518,5 @@ public class EntranceRegister
 		this.verifiedBy = verifiedBy;
 	}
 	
-	 
 	
 }

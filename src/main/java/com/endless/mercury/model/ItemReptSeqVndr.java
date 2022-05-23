@@ -17,7 +17,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
-@Table(name = "mry_mst_item_receipe_sequence_vendor")
+@Table(name = "mry_mst_item_recipe_sequence_vendor")
 @EntityListeners(AuditingEntityListener.class)
 @JsonIgnoreProperties(value = {"createdDate", "updatedDate"}, allowGetters = true)
 public class ItemReptSeqVndr implements Serializable
@@ -29,7 +29,7 @@ public class ItemReptSeqVndr implements Serializable
 	private static final long serialVersionUID = 1952918905273480435L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long receipeVendorFlowId;
+	private long recipeVendorFlowId;
 	private String createdClient;
 	private String createdBy;
 	@CreationTimestamp
@@ -46,26 +46,26 @@ public class ItemReptSeqVndr implements Serializable
 	private String processStageFor;
 	private String processSequenceNo;
 	private String processName;
-	private String childItemFor;
-	private String childItemSequenceNo;
-	private String childItemId;
-	private String childItemPriority;
+	private String processFor;
+	private String subItemSequenceNo;
+	private String subItemId;
+	private String subItemPriority;
 	private String uom;
 	private String consumptionForQty;
 	private String consumptionQty;
 	private String finishQty;
 	private String balanceQty;
-	private String vendorId;
+	private String processVendor;
 	private String hsnCodeId;
 	private String vendorItemNumber;
 	private String vendorItemName;
 	private String vendorItemNameId;
 	private String vendorPriority;
-	private String stockSharingPrecentage;
+	private String processSharingPrecentage;
 	
 	public ItemReptSeqVndr() {}
 
-	public ItemReptSeqVndr(long receipeVendorFlowId, String createdClient, String createdBy, LocalDateTime createdDate,
+	public ItemReptSeqVndr(long recipeVendorFlowId, String createdClient, String createdBy, LocalDateTime createdDate,
 			String updatedBy, LocalDateTime updatedDate, String itemType, String item, String receipeVendor,
 			String processStageNo, String processStageName, String processStageFor, String processSequenceNo,
 			String processName, String childItemFor, String childItemSequenceNo, String childItemId,
@@ -73,7 +73,7 @@ public class ItemReptSeqVndr implements Serializable
 			String balanceQty, String vendorId, String hsnCodeId, String vendorItemNumber, String vendorItemName,
 			String vendorItemNameId, String vendorPriority, String stockSharingPrecentage) {
 		super();
-		this.receipeVendorFlowId = receipeVendorFlowId;
+		this.recipeVendorFlowId = recipeVendorFlowId;
 		this.createdClient = createdClient;
 		this.createdBy = createdBy;
 		this.createdDate = createdDate;
@@ -87,46 +87,46 @@ public class ItemReptSeqVndr implements Serializable
 		this.processStageFor = processStageFor;
 		this.processSequenceNo = processSequenceNo;
 		this.processName = processName;
-		this.childItemFor = childItemFor;
-		this.childItemSequenceNo = childItemSequenceNo;
-		this.childItemId = childItemId;
-		this.childItemPriority = childItemPriority;
+		this.processFor = childItemFor;
+		this.subItemSequenceNo = childItemSequenceNo;
+		this.subItemId = childItemId;
+		this.subItemPriority = childItemPriority;
 		this.uom = uom;
 		this.consumptionForQty = consumptionForQty;
 		this.consumptionQty = consumptionQty;
 		this.finishQty = finishQty;
 		this.balanceQty = balanceQty;
-		this.vendorId = vendorId;
+		this.processVendor = vendorId;
 		this.hsnCodeId = hsnCodeId;
 		this.vendorItemNumber = vendorItemNumber;
 		this.vendorItemName = vendorItemName;
 		this.vendorItemNameId = vendorItemNameId;
 		this.vendorPriority = vendorPriority;
-		this.stockSharingPrecentage = stockSharingPrecentage;
+		this.processSharingPrecentage = stockSharingPrecentage;
 	}
 
 	@Override
 	public String toString() {
-		return "ItemReptSeqVndr [receipeVendorFlowId=" + receipeVendorFlowId + ", createdClient=" + createdClient
+		return "ItemReptSeqVndr [recipeVendorFlowId=" + recipeVendorFlowId + ", createdClient=" + createdClient
 				+ ", createdBy=" + createdBy + ", createdDate=" + createdDate + ", updatedBy=" + updatedBy
 				+ ", updatedDate=" + updatedDate + ", itemType=" + itemType + ", item=" + item + ", receipeVendor="
 				+ receipeVendor + ", processStageNo=" + processStageNo + ", processStageName=" + processStageName
 				+ ", processStageFor=" + processStageFor + ", processSequenceNo=" + processSequenceNo + ", processName="
-				+ processName + ", childItemFor=" + childItemFor + ", childItemSequenceNo=" + childItemSequenceNo
-				+ ", childItemId=" + childItemId + ", childItemPriority=" + childItemPriority + ", uom=" + uom
+				+ processName + ", childItemFor=" + processFor + ", childItemSequenceNo=" + subItemSequenceNo
+				+ ", childItemId=" + subItemId + ", childItemPriority=" + subItemPriority + ", uom=" + uom
 				+ ", consumptionForQty=" + consumptionForQty + ", consumptionQty=" + consumptionQty + ", finishQty="
-				+ finishQty + ", balanceQty=" + balanceQty + ", vendorId=" + vendorId + ", hsnCodeId=" + hsnCodeId
+				+ finishQty + ", balanceQty=" + balanceQty + ", vendorId=" + processVendor + ", hsnCodeId=" + hsnCodeId
 				+ ", vendorItemNumber=" + vendorItemNumber + ", vendorItemName=" + vendorItemName
 				+ ", vendorItemNameId=" + vendorItemNameId + ", vendorPriority=" + vendorPriority
-				+ ", stockSharingPrecentage=" + stockSharingPrecentage + "]";
+				+ ", stockSharingPrecentage=" + processSharingPrecentage + "]";
 	}
 
-	public long getReceipeVendorFlowId() {
-		return receipeVendorFlowId;
+	public long getRecipeVendorFlowId() {
+		return recipeVendorFlowId;
 	}
 
-	public void setReceipeVendorFlowId(long receipeVendorFlowId) {
-		this.receipeVendorFlowId = receipeVendorFlowId;
+	public void setRecipeVendorFlowId(long receipeVendorFlowId) {
+		this.recipeVendorFlowId = receipeVendorFlowId;
 	}
 
 	public String getCreatedClient() {
@@ -233,36 +233,36 @@ public class ItemReptSeqVndr implements Serializable
 		this.processName = processName;
 	}
 
-	public String getChildItemFor() {
-		return childItemFor;
+	public String getProcessFor() {
+		return processFor;
 	}
 
-	public void setChildItemFor(String childItemFor) {
-		this.childItemFor = childItemFor;
+	public void setProcessFor(String childItemFor) {
+		this.processFor = childItemFor;
 	}
 
-	public String getChildItemSequenceNo() {
-		return childItemSequenceNo;
+	public String getSubItemSequenceNo() {
+		return subItemSequenceNo;
 	}
 
-	public void setChildItemSequenceNo(String childItemSequenceNo) {
-		this.childItemSequenceNo = childItemSequenceNo;
+	public void setSubItemSequenceNo(String childItemSequenceNo) {
+		this.subItemSequenceNo = childItemSequenceNo;
 	}
 
-	public String getChildItemId() {
-		return childItemId;
+	public String getSubItemId() {
+		return subItemId;
 	}
 
-	public void setChildItemId(String childItemId) {
-		this.childItemId = childItemId;
+	public void setSubItemId(String childItemId) {
+		this.subItemId = childItemId;
 	}
 
-	public String getChildItemPriority() {
-		return childItemPriority;
+	public String getSubItemPriority() {
+		return subItemPriority;
 	}
 
-	public void setChildItemPriority(String childItemPriority) {
-		this.childItemPriority = childItemPriority;
+	public void setSubItemPriority(String childItemPriority) {
+		this.subItemPriority = childItemPriority;
 	}
 
 	public String getUom() {
@@ -305,12 +305,12 @@ public class ItemReptSeqVndr implements Serializable
 		this.balanceQty = balanceQty;
 	}
 
-	public String getVendorId() {
-		return vendorId;
+	public String getProcessVendor() {
+		return processVendor;
 	}
 
-	public void setVendorId(String vendorId) {
-		this.vendorId = vendorId;
+	public void setProcessVendor(String vendorId) {
+		this.processVendor = vendorId;
 	}
 
 	public String getHsnCodeId() {
@@ -353,12 +353,12 @@ public class ItemReptSeqVndr implements Serializable
 		this.vendorPriority = vendorPriority;
 	}
 
-	public String getStockSharingPrecentage() {
-		return stockSharingPrecentage;
+	public String getProcessSharingPrecentage() {
+		return processSharingPrecentage;
 	}
 
-	public void setStockSharingPrecentage(String stockSharingPrecentage) {
-		this.stockSharingPrecentage = stockSharingPrecentage;
+	public void setProcessSharingPrecentage(String stockSharingPrecentage) {
+		this.processSharingPrecentage = stockSharingPrecentage;
 	}
 	
 	

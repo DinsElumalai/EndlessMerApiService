@@ -37,9 +37,26 @@ public class SoftwareSetup implements Serializable
 	@Column(name = "updated_date", nullable = false)
 	@UpdateTimestamp
 	private LocalDateTime updatedDate;
-
-	public SoftwareSetup() {}
 	
+	public SoftwareSetup() {}
+
+	public SoftwareSetup(Long id, String constantName, String constantValue, String comments, String updatedUserId,
+			LocalDateTime updatedDate) {
+		super();
+		this.id = id;
+		this.constantName = constantName;
+		this.constantValue = constantValue;
+		this.comments = comments;
+		this.updatedUserId = updatedUserId;
+		this.updatedDate = updatedDate;
+	}
+
+	@Override
+	public String toString() {
+		return "SoftwareSetup [id=" + id + ", constantName=" + constantName + ", constantValue=" + constantValue
+				+ ", comments=" + comments + ", updatedUserId=" + updatedUserId + ", updatedDate=" + updatedDate + "]";
+	}
+
 	public Long getId() {
 		return id;
 	}
@@ -47,7 +64,7 @@ public class SoftwareSetup implements Serializable
 	public void setId(Long id) {
 		this.id = id;
 	}
-	
+
 	public String getConstantName() {
 		return constantName;
 	}
@@ -88,22 +105,5 @@ public class SoftwareSetup implements Serializable
 		this.updatedDate = updatedDate;
 	}
 
-	@Override
-	public String toString() {
-		return "SoftwareSetup [id=" + id + ",constantName=" + constantName + ", constantValue=" + constantValue + ", comments="
-				+ comments + ", updatedUserId=" + updatedUserId + ", updatedDate=" + updatedDate + "]";
-	}
-
-	public SoftwareSetup(long id, String constantName, String constantValue, String comments, String updatedUserId,
-			LocalDateTime updatedDate) {
-		super();
-		this.id = id;
-		this.constantName = constantName;
-		this.constantValue = constantValue;
-		this.comments = comments;
-		this.updatedUserId = updatedUserId;
-		this.updatedDate = updatedDate;
-	}
-	
 	
 }

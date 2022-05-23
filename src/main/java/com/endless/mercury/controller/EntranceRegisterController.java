@@ -123,6 +123,10 @@ public class EntranceRegisterController
     	entranceRegister.setVerifiedBy(entranceRegisterDetails.getVerifiedBy());
     	entranceRegister.setRdurationHrs(entranceRegisterDetails.getRdurationHrs());
     	entranceRegister.setRdurationMins(entranceRegisterDetails.getRdurationMins());
+    	entranceRegister.setBreakfastM(entranceRegisterDetails.getBreakfastM());
+    	entranceRegister.setBreakfastN(entranceRegisterDetails.getBreakfastN());
+    	entranceRegister.setLunch(entranceRegisterDetails.getLunch());
+    	entranceRegister.setDinner(entranceRegisterDetails.getDinner());
 
     	EntranceRegister updatedEntranceRegister = entranceRegRepo.save(entranceRegister);
         return updatedEntranceRegister;

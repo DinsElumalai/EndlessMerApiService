@@ -54,15 +54,22 @@ public class Item implements Serializable
 	private byte[] imageName;
 	private boolean active;
 	private LocalDate inactivatedDate;
+	private String vendorItemWtGms;
+	private String finishedItemWtGms;
+	private String consumeItemWtGms;
+	private String inwardOrderRequired;
+	private String outwardOrderRequired;
+	private String returnable;
 	
 	public Item() {}
 
-	public Item(long itemId, String createdClient, String createdUserId, LocalDateTime createdDate, String updatedUserId,
-			LocalDateTime updatedDate, String itemOurCode, String itemTypeId, String itemSubTypeId,
-			String itemOurTypeCode, String itemNumber, String itemName, String itemNameId, long vendorId,
-			String itemDescription, String unitCategory, String hsnSacCode, String comments, String bufferQty,
-			String reorderQtyLevel, LocalDate registeredDate, byte[] imageName, boolean active,
-			LocalDate inactivatedDate) {
+	public Item(long itemId, String createdClient, String createdUserId, LocalDateTime createdDate,
+			String updatedUserId, LocalDateTime updatedDate, String itemOurCode, String itemTypeId,
+			String itemSubTypeId, String itemOurTypeCode, String itemNumber, String itemName, String itemNameId,
+			long vendorId, String itemDescription, String unitCategory, String hsnSacCode, String comments,
+			String bufferQty, String reorderQtyLevel, LocalDate registeredDate, byte[] imageName, boolean active,
+			LocalDate inactivatedDate, String vendorItemWtGms, String finishedItemWtGms, String consumeItemWtGms,
+			String inwardOrderRequired, String outwardOrderRequired, String returnable) {
 		super();
 		this.itemId = itemId;
 		this.createdClient = createdClient;
@@ -88,18 +95,28 @@ public class Item implements Serializable
 		this.imageName = imageName;
 		this.active = active;
 		this.inactivatedDate = inactivatedDate;
+		this.vendorItemWtGms = vendorItemWtGms;
+		this.finishedItemWtGms = finishedItemWtGms;
+		this.consumeItemWtGms = consumeItemWtGms;
+		this.inwardOrderRequired = inwardOrderRequired;
+		this.outwardOrderRequired = outwardOrderRequired;
+		this.returnable = returnable;
 	}
 
 	@Override
 	public String toString() {
-		return "Item [itemId=" + itemId + ", createdClient=" + createdClient + ", createdUserId=" + createdUserId + ", createdDate="
-				+ createdDate + ", updatedUserId=" + updatedUserId + ", updatedDate=" + updatedDate + ", itemOurCode="
-				+ itemOurCode + ", itemTypeId=" + itemTypeId + ", itemSubTypeId=" + itemSubTypeId + ", itemOurTypeCode="
-				+ itemOurTypeCode + ", itemNumber=" + itemNumber + ", itemName=" + itemName + ", itemNameId="
-				+ itemNameId + ", vendorId=" + vendorId + ", itemDescription=" + itemDescription + ", unitCategory="
-				+ unitCategory + ", hsnSacCode=" + hsnSacCode + ", comments=" + comments + ", bufferQty=" + bufferQty
-				+ ", reorderQtyLevel=" + reorderQtyLevel + ", registeredDate=" + registeredDate + ", imageName="
-				+ Arrays.toString(imageName) + ", active=" + active + ", inactivatedDate=" + inactivatedDate + "]";
+		return "Item [itemId=" + itemId + ", createdClient=" + createdClient + ", createdUserId=" + createdUserId
+				+ ", createdDate=" + createdDate + ", updatedUserId=" + updatedUserId + ", updatedDate=" + updatedDate
+				+ ", itemOurCode=" + itemOurCode + ", itemTypeId=" + itemTypeId + ", itemSubTypeId=" + itemSubTypeId
+				+ ", itemOurTypeCode=" + itemOurTypeCode + ", itemNumber=" + itemNumber + ", itemName=" + itemName
+				+ ", itemNameId=" + itemNameId + ", vendorId=" + vendorId + ", itemDescription=" + itemDescription
+				+ ", unitCategory=" + unitCategory + ", hsnSacCode=" + hsnSacCode + ", comments=" + comments
+				+ ", bufferQty=" + bufferQty + ", reorderQtyLevel=" + reorderQtyLevel + ", registeredDate="
+				+ registeredDate + ", imageName=" + Arrays.toString(imageName) + ", active=" + active
+				+ ", inactivatedDate=" + inactivatedDate + ", vendorItemWtGms=" + vendorItemWtGms
+				+ ", finishedItemWtGms=" + finishedItemWtGms + ", consumeItemWtGms=" + consumeItemWtGms
+				+ ", inwardOrderRequired=" + inwardOrderRequired + ", outwardOrderRequired=" + outwardOrderRequired
+				+ ", returnable=" + returnable + "]";
 	}
 
 	public long getItemId() {
@@ -146,7 +163,7 @@ public class Item implements Serializable
 		return updatedDate;
 	}
 
-	public void setUdpatedDate(LocalDateTime updatedDate) {
+	public void setUpdatedDate(LocalDateTime updatedDate) {
 		this.updatedDate = updatedDate;
 	}
 
@@ -278,7 +295,7 @@ public class Item implements Serializable
 		this.imageName = imageName;
 	}
 
-	public boolean getActive() {
+	public boolean isActive() {
 		return active;
 	}
 
@@ -294,9 +311,58 @@ public class Item implements Serializable
 		this.inactivatedDate = inactivatedDate;
 	}
 
+	public String getVendorItemWtGms() {
+		return vendorItemWtGms;
+	}
+
+	public void setVendorItemWtGms(String vendorItemWtGms) {
+		this.vendorItemWtGms = vendorItemWtGms;
+	}
+
+	public String getFinishedItemWtGms() {
+		return finishedItemWtGms;
+	}
+
+	public void setFinishedItemWtGms(String finishedItemWtGms) {
+		this.finishedItemWtGms = finishedItemWtGms;
+	}
+
+	public String getConsumeItemWtGms() {
+		return consumeItemWtGms;
+	}
+
+	public void setConsumeItemWtGms(String consumeItemWtGms) {
+		this.consumeItemWtGms = consumeItemWtGms;
+	}
+
+	public String getInwardOrderRequired() {
+		return inwardOrderRequired;
+	}
+
+	public void setInwardOrderRequired(String inwardOrderRequired) {
+		this.inwardOrderRequired = inwardOrderRequired;
+	}
+
+	public String getOutwardOrderRequired() {
+		return outwardOrderRequired;
+	}
+
+	public void setOutwardOrderRequired(String outwardOrderRequired) {
+		this.outwardOrderRequired = outwardOrderRequired;
+	}
+
+	public String getReturnable() {
+		return returnable;
+	}
+
+	public void setReturnable(String returnable) {
+		this.returnable = returnable;
+	}
+
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
+
 	
 	
 }

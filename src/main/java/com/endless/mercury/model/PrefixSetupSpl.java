@@ -17,7 +17,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
-@Table(name = "mry_mst_prefix_special")
+@Table(name = "mry_set_prefix_special")
 @EntityListeners(AuditingEntityListener.class)
 @JsonIgnoreProperties(value = {"createdDate", "updatedDate"}, allowGetters = true)
 public class PrefixSetupSpl implements Serializable

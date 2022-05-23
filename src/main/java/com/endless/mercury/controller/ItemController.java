@@ -88,7 +88,7 @@ public class ItemController {
         Item item = itemRepository.findById(itemId)
                 .orElseThrow(() -> new ResourceNotFoundException("Item", "id", itemId));
 
-        item.setActive(itemDetails.getActive());
+        item.setActive(itemDetails.isActive());
         item.setBufferQty(itemDetails.getBufferQty());
         item.setComments(itemDetails.getComments());
         item.setHsnSacCode(itemDetails.getHsnSacCode());
@@ -107,7 +107,12 @@ public class ItemController {
         item.setReorderQtyLevel(itemDetails.getReorderQtyLevel());
         item.setUnitCategory(itemDetails.getUnitCategory());
         item.setVendorId(itemDetails.getVendorId());
-                     
+        item.setVendorItemWtGms(itemDetails.getVendorItemWtGms());
+        item.setFinishedItemWtGms(itemDetails.getFinishedItemWtGms());
+        item.setConsumeItemWtGms(itemDetails.getConsumeItemWtGms());
+        item.setInwardOrderRequired(itemDetails.getInwardOrderRequired());
+        item.setOutwardOrderRequired(itemDetails.getOutwardOrderRequired());
+        item.setReturnable(itemDetails.getReturnable());                     
 
         Item updatedItem = itemRepository.save(item);
         return updatedItem;

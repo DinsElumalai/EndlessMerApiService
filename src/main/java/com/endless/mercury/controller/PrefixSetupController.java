@@ -74,7 +74,13 @@ public class PrefixSetupController
         prefixSetup.setPdrnOurCodePrefix(prefixSetupDetails.getPdrnOurCodePrefix());
         prefixSetup.setUpdatedUserId(prefixSetupDetails.getUpdatedUserId());
         prefixSetup.setVendorOurCodePrefix(prefixSetupDetails.getVendorOurCodePrefix());
-               
+        prefixSetup.setOjdcOurCodePrefix(prefixSetupDetails.getOjdcOurCodePrefix());
+        prefixSetup.setOsdcOurCodePrefix(prefixSetupDetails.getOsdcOurCodePrefix());
+        prefixSetup.setOsdiOurCodePrefix(prefixSetupDetails.getOsdiOurCodePrefix());
+        prefixSetup.setOspiOurCodePrefix(prefixSetupDetails.getOspiOurCodePrefix());
+        prefixSetup.setOutwardOurCodePrefix(prefixSetupDetails.getOutwardOurCodePrefix());
+        prefixSetup.setInwardOurCodePrefix(prefixSetupDetails.getInwardOurCodePrefix());
+        prefixSetup.setIsdiOurCodePrefix(prefixSetupDetails.getIsdiOurCodePrefix());
 
         PrefixSetup updatedPrefixSetup = prefixSetupRepository.save(prefixSetup);
         return updatedPrefixSetup;

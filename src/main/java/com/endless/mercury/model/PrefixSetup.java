@@ -65,13 +65,22 @@ public class PrefixSetup implements Serializable
 	
 	private String rpanOurCodePrefix;
 	private String pdrnOurCodePrefix;
+	private String ospiOurCodePrefix;
+	private String osdiOurCodePrefix;
+	private String osdcOurCodePrefix;
+	private String ojdcOurCodePrefix;
+	private String outwardOurCodePrefix;
+	private String isdiOurCodePrefix;
+	private String inwardOurCodePrefix;
 
 	public PrefixSetup() {	}
 
-	public PrefixSetup(Long id, String createdClient, LocalDateTime createdDate,
-			String createdUserId, String updatedUserId, LocalDateTime updatedDate, String financialYear,
-			String itemOurCodePrefix, String vendorOurCodePrefix, String employeeOurCodePrefix,
-			String rcrnOurCodePrefix, String pponOurCodePrefix, String rpanOurCodePrefix, String pdrnOurCodePrefix) {
+	public PrefixSetup(Long id, String createdClient, LocalDateTime createdDate, String createdUserId,
+			String updatedUserId, LocalDateTime updatedDate, String financialYear, String itemOurCodePrefix,
+			String vendorOurCodePrefix, String employeeOurCodePrefix, String rcrnOurCodePrefix,
+			String pponOurCodePrefix, String rpanOurCodePrefix, String pdrnOurCodePrefix, String ospiOurCodePrefix,
+			String osdiOurCodePrefix, String osdcOurCodePrefix, String ojdcOurCodePrefix, String outwardOurCodePrefix,
+			String isdiOurCodePrefix, String inwardOurCodePrefix) {
 		super();
 		this.id = id;
 		this.createdClient = createdClient;
@@ -87,17 +96,27 @@ public class PrefixSetup implements Serializable
 		this.pponOurCodePrefix = pponOurCodePrefix;
 		this.rpanOurCodePrefix = rpanOurCodePrefix;
 		this.pdrnOurCodePrefix = pdrnOurCodePrefix;
+		this.ospiOurCodePrefix = ospiOurCodePrefix;
+		this.osdiOurCodePrefix = osdiOurCodePrefix;
+		this.osdcOurCodePrefix = osdcOurCodePrefix;
+		this.ojdcOurCodePrefix = ojdcOurCodePrefix;
+		this.outwardOurCodePrefix = outwardOurCodePrefix;
+		this.isdiOurCodePrefix = isdiOurCodePrefix;
+		this.inwardOurCodePrefix = inwardOurCodePrefix;
 	}
 
 	@Override
 	public String toString() {
-		return "PrefixSetup [id=" + id + ", clientName=" + createdClient 
-				+ ", createdDate=" + createdDate + ", createdUserId=" + createdUserId + ", updatedUserId="
-				+ updatedUserId + ", updatedDate=" + updatedDate + ", financialYear=" + financialYear
-				+ ", itemOurCodePrefix=" + itemOurCodePrefix + ", vendorOurCodePrefix=" + vendorOurCodePrefix
-				+ ", employeeOurCodePrefix=" + employeeOurCodePrefix + ", rcrnOurCodePrefix=" + rcrnOurCodePrefix
-				+ ", pponOurCodePrefix=" + pponOurCodePrefix + ", rpanOurCodePrefix=" + rpanOurCodePrefix
-				+ ", pdrnOurCodePrefix=" + pdrnOurCodePrefix + "]";
+		return "PrefixSetup [id=" + id + ", createdClient=" + createdClient + ", createdDate=" + createdDate
+				+ ", createdUserId=" + createdUserId + ", updatedUserId=" + updatedUserId + ", updatedDate="
+				+ updatedDate + ", financialYear=" + financialYear + ", itemOurCodePrefix=" + itemOurCodePrefix
+				+ ", vendorOurCodePrefix=" + vendorOurCodePrefix + ", employeeOurCodePrefix=" + employeeOurCodePrefix
+				+ ", rcrnOurCodePrefix=" + rcrnOurCodePrefix + ", pponOurCodePrefix=" + pponOurCodePrefix
+				+ ", rpanOurCodePrefix=" + rpanOurCodePrefix + ", pdrnOurCodePrefix=" + pdrnOurCodePrefix
+				+ ", ospiOurCodePrefix=" + ospiOurCodePrefix + ", osdiOurCodePrefix=" + osdiOurCodePrefix
+				+ ", osdcOurCodePrefix=" + osdcOurCodePrefix + ", ojdcOurCodePrefix=" + ojdcOurCodePrefix
+				+ ", outwardOurCodePrefix=" + outwardOurCodePrefix + ", isdiOurCodePrefix=" + isdiOurCodePrefix
+				+ ", inwardOurCodePrefix=" + inwardOurCodePrefix + "]";
 	}
 
 	public Long getId() {
@@ -112,11 +131,9 @@ public class PrefixSetup implements Serializable
 		return createdClient;
 	}
 
-	public void setCreatedClient(String clientName) {
-		this.createdClient = clientName;
+	public void setCreatedClient(String createdClient) {
+		this.createdClient = createdClient;
 	}
-
-	
 
 	public LocalDateTime getCreatedDate() {
 		return createdDate;
@@ -214,7 +231,61 @@ public class PrefixSetup implements Serializable
 		this.pdrnOurCodePrefix = pdrnOurCodePrefix;
 	}
 
-	
-	
+	public String getOspiOurCodePrefix() {
+		return ospiOurCodePrefix;
+	}
+
+	public void setOspiOurCodePrefix(String ospiOurCodePrefix) {
+		this.ospiOurCodePrefix = ospiOurCodePrefix;
+	}
+
+	public String getOsdiOurCodePrefix() {
+		return osdiOurCodePrefix;
+	}
+
+	public void setOsdiOurCodePrefix(String osdiOurCodePrefix) {
+		this.osdiOurCodePrefix = osdiOurCodePrefix;
+	}
+
+	public String getOsdcOurCodePrefix() {
+		return osdcOurCodePrefix;
+	}
+
+	public void setOsdcOurCodePrefix(String osdcOurCodePrefix) {
+		this.osdcOurCodePrefix = osdcOurCodePrefix;
+	}
+
+	public String getOjdcOurCodePrefix() {
+		return ojdcOurCodePrefix;
+	}
+
+	public void setOjdcOurCodePrefix(String ojdcOurCodePrefix) {
+		this.ojdcOurCodePrefix = ojdcOurCodePrefix;
+	}
+
+	public String getOutwardOurCodePrefix() {
+		return outwardOurCodePrefix;
+	}
+
+	public void setOutwardOurCodePrefix(String outwardOurCodePrefix) {
+		this.outwardOurCodePrefix = outwardOurCodePrefix;
+	}
+
+	public String getIsdiOurCodePrefix() {
+		return isdiOurCodePrefix;
+	}
+
+	public void setIsdiOurCodePrefix(String isdiOurCodePrefix) {
+		this.isdiOurCodePrefix = isdiOurCodePrefix;
+	}
+
+	public String getInwardOurCodePrefix() {
+		return inwardOurCodePrefix;
+	}
+
+	public void setInwardOurCodePrefix(String inwardOurCodePrefix) {
+		this.inwardOurCodePrefix = inwardOurCodePrefix;
+	}
+
 	
 }

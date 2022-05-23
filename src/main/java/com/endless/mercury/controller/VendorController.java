@@ -110,7 +110,9 @@ public class VendorController
     	vendor.setVendorOurCode(vendorDetails.getVendorOurCode());
     	vendor.setVendorOurTypeCode(vendorDetails.getVendorOurTypeCode());
     	vendor.setVendorSubType(vendorDetails.getVendorSubType());
-    	vendor.setVendorType(vendorDetails.getVendorType());             
+    	vendor.setVendorType(vendorDetails.getVendorType());
+    	vendor.setPrefixSpecial(vendorDetails.getPrefixSpecial());
+    	vendor.setExtraCopy(vendorDetails.getExtraCopy());
 
     	Vendor updatedvendor = vendorRepository.save(vendor);
         return updatedvendor;

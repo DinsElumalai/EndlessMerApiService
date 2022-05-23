@@ -66,7 +66,7 @@ public class ItemOrder implements Serializable
 	private String itemTypeId;
 	private String itemId;
 	private String processStageNo;
-	private String rcptVendorFlowId;
+	private String recipeVendorFlowId;
 	private String vendorItemNumber;
 	private String vendorItemName;
 	private String vendorItemNameId;
@@ -147,7 +147,7 @@ public class ItemOrder implements Serializable
 		this.itemTypeId = itemTypeId;
 		this.itemId = itemId;
 		this.processStageNo = processStageNo;
-		this.rcptVendorFlowId = rcptVendorFlowId;
+		this.recipeVendorFlowId = rcptVendorFlowId;
 		this.vendorItemNumber = vendorItemNumber;
 		this.vendorItemName = vendorItemName;
 		this.vendorItemNameId = vendorItemNameId;
@@ -189,7 +189,7 @@ public class ItemOrder implements Serializable
 				+ ", packagingRate=" + packagingRate + ", freightCalcType=" + freightCalcType + ", freightRateType="
 				+ freightRateType + ", freightRate=" + freightRate + ", pfCalcType=" + pfCalcType + ", pfRateType="
 				+ pfRateType + ", pfRate=" + pfRate + ", itemTypeId=" + itemTypeId + ", itemId=" + itemId
-				+ ", processStageNo=" + processStageNo + ", rcptVendorFlowId=" + rcptVendorFlowId
+				+ ", processStageNo=" + processStageNo + ", rcptVendorFlowId=" + recipeVendorFlowId
 				+ ", vendorItemNumber=" + vendorItemNumber + ", vendorItemName=" + vendorItemName
 				+ ", vendorItemNameId=" + vendorItemNameId + ", orderLineNo=" + orderLineNo + ", orderNos=" + orderNos
 				+ ", orderKgs=" + orderKgs + ", precisionNosDigit=" + precisionNosDigit + ", precisionKgsDigit="
@@ -506,12 +506,12 @@ public class ItemOrder implements Serializable
 		this.processStageNo = processStageNo;
 	}
 
-	public String getRcptVendorFlowId() {
-		return rcptVendorFlowId;
+	public String getRecipeVendorFlowId() {
+		return recipeVendorFlowId;
 	}
 
-	public void setRcptVendorFlowId(String rcptVendorFlowId) {
-		this.rcptVendorFlowId = rcptVendorFlowId;
+	public void setRecipeVendorFlowId(String rcptVendorFlowId) {
+		this.recipeVendorFlowId = rcptVendorFlowId;
 	}
 
 	public String getVendorItemNumber() {
