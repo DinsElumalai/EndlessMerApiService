@@ -35,6 +35,13 @@ public class ItemDocumentController
     public List<ItemDocument> getAllItemDocuments() {
         return itemDocumentRepository.findAll();
     }
+    
+    //Get All by documentOurCode
+    @GetMapping("/itemDocument/docOurcode/{id}")
+    public List<ItemDocument> getAllByDocumentOurCode(@PathVariable(value = "id") String docOurCode){
+    	
+    	return itemDocumentRepository.findAllByDocumentOurCode(docOurCode);
+    }
 
  // Create a new ItemDocument
     @PostMapping("/itemDocument")
@@ -70,10 +77,11 @@ public class ItemDocumentController
         ItemDocument itemDocument = itemDocumentRepository.findById(itemDocumentId)
                 .orElseThrow(() -> new ResourceNotFoundException("ItemDocument", "id", itemDocumentId));
 
-        itemDocument.setCreatedBy(itemDocumentDetails.getCreatedBy());
+        itemDocument = itemDocumentDetails;
+     /*   itemDocument.setCreatedBy(itemDocumentDetails.getCreatedBy());
         itemDocument.setCreatedClient(itemDocumentDetails.getCreatedClient());
         itemDocument.setUpdatedBy(itemDocumentDetails.getUpdatedBy()); 
-        itemDocument.setAmount(itemDocumentDetails.getAmount());
+        itemDocument.setAssessableValue(itemDocumentDetails.getAssessableValue());
         itemDocument.setCgst(itemDocumentDetails.getCgst());
         itemDocument.setConsiderOrder(itemDocumentDetails.getConsiderOrder());
         itemDocument.setConsumeItemWeightInGms(itemDocumentDetails.getConsumeItemWeightInGms());
@@ -130,8 +138,18 @@ public class ItemDocumentController
         itemDocument.setVendorItemName(itemDocumentDetails.getVendorItemName());
         itemDocument.setVendorItemNumber(itemDocumentDetails.getVendorItemNumber());
         itemDocument.setVendorItemWeightInGms(itemDocumentDetails.getVehicleNO());
-        
-        
+        itemDocument.setTcsPercentage(itemDocumentDetails.getTcsPercentage());
+        itemDocument.setPackaging(itemDocumentDetails.getPackaging());
+        itemDocument.setPackagingCalcType(itemDocumentDetails.getPackagingCalcType());
+        itemDocument.setPackagingRate(itemDocumentDetails.getPackagingRate());
+        itemDocument.setPackagingRateType(itemDocumentDetails.getPackagingRateType());
+        itemDocument.setFreightCalcType(itemDocumentDetails.getFreightCalcType());
+        itemDocument.setFreightRate(itemDocumentDetails.getFreightRate());
+        itemDocument.setFreightRateType(itemDocumentDetails.getFreightRateType());
+        itemDocument.setPfCalcType(itemDocumentDetails.getPfCalcType());
+        itemDocument.setPfRate(itemDocumentDetails.getPfRate());
+        itemDocument.setPfRateType(itemDocumentDetails.getPfRateType());
+        */
         
         ItemDocument updatedItemDocument = itemDocumentRepository.save(itemDocument);
         return updatedItemDocument;
